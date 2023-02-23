@@ -1,0 +1,65 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Student {
+    protected:
+        string name;
+        int id;
+    public:
+        Student(string n, int i) {
+            name = n;
+            id = i;
+        }
+        virtual void display() = 0;
+};
+
+class ICT_Student : public Student {
+    private:
+        string course;
+        int stage;
+    public:
+        ICT_Student(string n, int i, string c, int s) : Student(n, i) {
+            course = c;
+            stage = s;
+        }
+        void display() {
+            cout << "Name: " << name << endl;
+            cout << "ID: " << id << endl;
+            cout << "Course: " << course << endl;
+            cout << "Stage: " << stage << endl;
+        }
+};
+
+class Law_Student : public Student {
+    private:
+        string course;
+    public:
+        Law_Student(string n, int i, string c) : Student(n, i) {
+            course = c;
+        }
+        void display() {
+            cout << "Name: " << name << endl;
+            cout << "ID: " << id << endl;
+            cout << "Course: " << course << endl;
+        }
+};
+
+class Business_Student : public Student {
+    private:
+        string course;
+    public:
+        Business_Student(string n, int i, string c) : Student(n, i) {
+            course = c;
+        }
+        void display() {
+            cout << "Name: " << name << endl;
+            cout << "ID: " << id << endl;
+            cout << "Course: " << course << endl;
+        }
+};
+
+int main() {
+    return 0;
+}
