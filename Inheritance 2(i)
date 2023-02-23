@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+
+class Person {
+public:
+    // Constructor to initialize the class data members
+    Person(int age, std::string firstname, std::string lastname) {
+        this->age = age;
+        this->firstname = firstname;
+        this->lastname = lastname;
+    }
+
+    // Method to get the values of the data members
+    void getValues(int& age, std::string& firstname, std::string& lastname) {
+        age = this->age;
+        firstname = this->firstname;
+        lastname = this->lastname;
+    }
+
+    // Method to set the values of the data members
+    void setValues(int age, std::string firstname, std::string lastname) {
+        this->age = age;
+        this->firstname = firstname;
+        this->lastname = lastname;
+    }
+private:
+    int age;
+    std::string firstname;
+    std::string lastname;
+};
