@@ -1,0 +1,66 @@
+Demonstrate how hierarchical inheritance can be implemented with computer as main division and client and server as subdivisions.Include class members (data and functions of your choice). Ensure you implement the classes 
+using an object in the main() function.
+
+#include <iostream>
+using namespace std;
+
+// Base class for computer
+class Computer {
+protected:
+    string operatingSystem;
+public:
+    Computer(string os) {
+        operatingSystem = os;
+    }
+
+    void powerOn() {
+        cout << "Computer powered on" << endl;
+    }
+
+    void powerOff() {
+        cout << "Computer powered off" << endl;
+    }
+};
+
+// Derived class for client
+class Client : public Computer {
+public:
+    Client(string os) : Computer(os) {}
+};
+
+// Derived class for server
+class Server : public Computer {
+protected:
+    int numUsers;
+public:
+    Server(string os, int users) : Computer(os), numUsers(users) {}
+
+    void startService() {
+        cout << "Service started" << endl;
+    }
+
+    void stopService() {
+        cout << "Service stopped" << endl;
+    }
+};
+
+int main() {
+    // Creating an object of client computer
+    Client clientPC("Windows");
+    cout << "Client computer powered on" << endl;
+    cout << "Browser opened" << endl;
+    cout << "Email sent" << endl;
+    cout << "Client computer powered off" << endl;
+    cout << "Client computer operating system: " << clientPC.operatingSystem << endl;
+
+    // Creating an object of server computer
+    Server serverPC("Linux", 10);
+    cout << "Server computer powered on" << endl;
+    cout << "Service started" << endl;
+    cout << "Service stopped" << endl;
+    cout << "Server computer powered off" << endl;
+    cout << "Server computer operating system: " << serverPC.operatingSystem << endl;
+    cout << "Server computer number of users: " << serverPC.numUsers << endl;
+
+    return 0;
+}
