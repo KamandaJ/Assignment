@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Person {
+public:
+    Person(string name, int age) : name_(name), age_(age) {}
+
+    string name_;
+    int age_;
+};
+
+class Student : public Person {
+public:
+    Student(string name, int age, string institution, int year, int registrationNumber) 
+        : Person(name, age), institution_(institution), year_(year), registrationNumber_(registrationNumber) {}
+
+    string institution_;
+    int year_;
+    int registrationNumber_;
+};
+
+int main() {
+    
+    cout << "Name: " << student.name_ << endl;
+    cout << "Age: " << student.age_ << endl;
+    cout << "Institution: " << student.institution_ << endl;
+    cout << "Year: " << student.year_ << endl;
+    cout << "Registration Number: " << student.registrationNumber_ << endl;
+
+    return 0;
+}
